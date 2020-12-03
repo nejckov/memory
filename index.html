@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app">
+      <div class="game-content">
+
+        <!-- HEADER -->
+        <div class="header">
+
+          <div class="left"></div>
+
+          <div class="center">
+            <div class="title">
+              SPOMIN
+            </div>
+            <div class="stage">
+              <!-- javascript object -->
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="lives">
+              <!-- javascript -->
+            </div>
+            <div class="points">
+              Točke: 0
+            </div>
+          </div>
+        </div>
+        <!-- END HEADER -->
+
+        <!-- NEXT LEVEL -->
+        <div class="next-level">
+          <div class="next-level__title">
+            Odlično!
+          </div>
+          <div class="next-level__desc">
+            Nadaljujete na naslednji level.
+          </div>
+
+          <button type="button" class="nx-level">Naslednji level</button>
+        </div>
+        <!-- END NEXT LEVEL -->
+
+        <!-- GAME OVER -->
+        <div class="game-over">
+          <div class="game-over__title">
+            GAME OVER
+          </div>
+          <form class="form-score">
+            <input type="text" name="" value="" class="playerName">
+            <button type="button" class="submit-score" name="button">Submit</button>
+          </form>
+        </div>
+        <!-- END GAME OVER -->
+
+        <!-- RANKING -->
+        <div class="ranking">
+          <div class="ranking__title">
+            Lestvica
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <td>Mesto</td>
+                <td>Tekmovalec</td>
+                <td>Točke</td>
+              </tr>
+            </thead>
+            <tbody class="dataInsert">
+                <!-- javascript -->
+            </tbody>
+          </table>
+          <button type="submit" class="playAgain" name="button">Igraj ponovno</button>
+        </div>
+        <!-- END RANKING -->
+
+        <!-- LOADING SPIN -->
+        <div class="loading">
+          <img src="./img/loading.svg" alt="" class="rotating">
+        </div>
+        <!-- END LOADING SPIN -->
+
+        <!-- GAME MEMORY -->
+        <div class="game-memory">
+          <!-- JAVASCRIPT -->
+        </div>
+        <!-- END GAME MEMORY -->
+
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="./js/levels.js"></script>
+    <script type="module" src="./js/events.js"></script>
+    <script type="module" src="./js/paint.js"></script>
+    <script type="module" src="./js/serverSide.js"></script>
+    <script type="module" src="script.js"></script>
+
+  </body>
+</html>

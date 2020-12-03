@@ -1,0 +1,256 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-content {
+  flex-direction: column;
+  display: flex;
+
+  width: 900px;
+  height: 400px;
+  border: 2px solid black;
+}
+
+.header {
+  padding: 10px;
+  background-color: rgb(224, 133, 85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game-memory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.next-level {
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  width: 200px;
+  height: 100px;
+  background-color: rgb(77, 130, 193);
+  position: absolute;
+  left: calc(100% / 2 - 25px);
+  top: calc(100% / 2 - 75px);
+  padding: 10px;
+  box-shadow: 2px 5px 2px 1px rgb(93, 94, 106);
+}
+
+.next-level__title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.next-level button {
+  background-color: rgb(214, 164, 66);
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+[class^="heart"]  {
+  width: 15px;
+  height: 15px;
+}
+
+[class^="line"] {
+  height: 50px;
+  display: flex;
+  position: absolute;
+}
+
+[class^="card"] {
+  width: 50px;
+  height: 50px;
+  z-index: 10;
+  position: relative;
+  transition: all 2s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+[class^="card-front"] {
+  position: absolute;
+  background: rgb(95, 175, 226);
+  border: 2px solid black;
+  border-radius: 5px;
+  z-index; 100000;
+}
+
+[class^="card-back"] {
+  position: absolute;
+  transform: rotateY(180deg);
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+[class^="card"]:hover [class^="card-back"] {
+  background-color: yellow;
+  /*transform: rotateY(0deg);*/
+}
+
+[class^="card-back"]:hover {
+  /*transform: rotateY(0);*/
+}
+
+.game-over {
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 200px;
+  height: 140px;
+  left: calc(100% / 2 - 100px);
+  top: calc(100% / 2 - 70px);
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(226, 156, 63);
+  z-index: 1000;
+}
+
+.game-over__title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-score {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-score input {
+  padding: 3px 5px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  width: 100px;
+}
+
+.form-score button {
+  padding: 3px 5px;
+  background-color: green;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.loading {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: calc(100% / 2 - 35px);
+  left: calc(100% / 2 - 35px);
+  z-index: 1000;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.loading img {
+  width: 50px;
+  height: 50px;
+}
+
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
+.success-game {
+  position: absolute;
+  display: none;
+  top: calc(100% / 2 - 50px);
+  left: calc(100% / 2 - 20px);
+  text-align: center;
+  z-index: 1000;
+  padding: 30px 20px;
+  width: 100px;
+  background-color: rgb(244, 35, 195);
+}
+
+.ranking {
+  position: absolute;
+  display: none;
+  top: calc(100% / 2 - 115px);
+  left: calc(100% / 2 - 110px);
+  text-align: center;
+  z-index: 1000;
+  width: 200px;
+  height: 200px;
+  padding: 30px 20px;
+  background-color: rgb(244, 35, 195);
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.ranking__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.ranking button {
+  padding: 5px 10px;
+  background-color: rgb(57, 233, 59);
+  margin-top: 10px;
+  border-radius: 10px;
+}
